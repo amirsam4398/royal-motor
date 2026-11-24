@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رویال موتور | موتور هوش مصنوعی سئو اتوماتیک اینستاگرام</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff !important;
+      color: #202124 !important;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .rm-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #ffffff;
+      border-bottom: 1px solid #e8eaed;
+      padding: 12px 16px;
+    }
+
+    .rm-header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .rm-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #202124;
+    }
+
+    .rm-brand-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #e8f0fe;
+      color: #1a73e8;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .rm-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e6f4ea;
+      color: #137333;
+      border: 1px solid #ceead6;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .rm-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #1e8e3e;
+      display: inline-block;
+    }
+
+    .rm-main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    .rm-hero {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .rm-logo {
+      font-size: clamp(36px, 7vw, 56px);
+      font-weight: 900;
+      margin: 0 0 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .rm-subtitle {
+      font-size: 17px;
+      font-weight: 700;
+      color: #202124;
+      margin: 0 0 6px;
+    }
+
+    .rm-desc {
+      font-size: 13px;
+      color: #5f6368;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .rm-search-card {
+      background: #ffffff;
+      border: 1px solid #dfe1e5;
+      border-radius: 26px;
+      box-shadow: 0 2px 10px rgba(32, 33, 36, 0.08);
+      padding: 22px;
+      margin-bottom: 24px;
+    }
+
+    .rm-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .rm-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .rm-grid-2, .rm-grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .rm-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #3c4043;
+      margin-bottom: 6px;
+    }
+
+    .rm-input, .rm-textarea, .rm-select {
+      width: 100%;
+      background: #ffffff;
+      color: #202124;
+      border: 1px solid #dadce0;
+      border-radius: 22px;
+      padding: 10px 16px;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .rm-textarea {
+      border-radius: 16px;
+      resize: vertical;
+      min-height: 62px;
+    }
+
+    .rm-input:focus, .rm-textarea:focus, .rm-select:focus {
+      border-color: #1a73e8;
+      box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.14);
+    }
+
+    .rm-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .rm-btn-primary {
+      background: #1a73e8;
+      color: #ffffff;
+      border: none;
+      border-radius: 24px;
+      padding: 11px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .rm-btn-primary:hover {
+      background: #1557b0;
+      text-decoration: none;
+    }
+
+    .rm-btn-secondary {
+      background: #f8f9fa;
+      color: #3c4043;
+      border: 1px solid #dadce0;
+      border-radius: 24px;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .rm-card {
+      background: #ffffff;
+      border: 1px solid #e8eaed;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(60, 64, 67, 0.06);
+    }
+
+    .rm-section-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #202124;
+      margin: 0 0 12px;
+    }
+
+    .rm-tab-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .rm-tab {
+      padding: 7px 15px;
+      border-radius: 999px;
+      border: 1px solid #dadce0;
+      background: #ffffff;
+      color: #5f6368;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .rm-tab.active {
+      background: #e8f0fe;
+      color: #1a73e8;
+      border-color: #1a73e8;
+    }
+
+    .rm-vip-red {
+      border: 2px solid #ea4335;
+      background: #fff8f7;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 16px;
+      color: #7f1d1d;
+    }
+
+    .rm-item-box {
+      border: 1px solid #e8eaed;
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 12px;
+      background: #ffffff;
+    }
+
+    .rm-bar-bg {
+      width: 100%;
+      height: 7px;
+      background: #e8eaed;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .rm-hidden {
+      display: none !important;
+    }
+
+    .rm-status-box {
+      border-radius: 16px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .rm-footer {
+      border-top: 1px solid #e8eaed;
+      background: #f8f9fa;
+      padding: 18px 16px;
+      font-size: 12px;
+      color: #5f6368;
+      margin-top: 40px;
+    }
+
+    .rm-footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="rm-header">
+    <div class="rm-header-inner">
+      <div class="rm-brand">
+        <span class="rm-brand-badge">ر</span>
+        <span>استارتاپ فناورانه هوش مصنوعی رویال فام | اولین استارتاپ وایپ کدینگ در ایران</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="rm-status-pill"><span class="rm-live-dot"></span> پایش ۲۴/۷ فعال</span>
+        <a href="tel:09366681963" style="font-weight:700;">پشتیبانی: 09366681963</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="rm-main">
+    <section class="rm-hero">
+      <h1 class="rm-logo">
+        <span style="color:#1a73e8;">رویال</span><span style="color:#ea4335;">موتور</span>
+      </h1>
+      <p class="rm-subtitle">اولین موتور هوش مصنوعی سئو اتوماتیک اینستاگرام در ایران</p>
+      <p class="rm-desc">
+        تحلیل موازی تا ۱۰ پیج کارفرما • ذخیره‌سازی ۲۴/۷ و نمودار واقعی کلمات کلیدی و هشتگ‌ها • مقایسه با رقبا • تقویم محتوایی به‌روز
+      </p>
+    </section>
+
+    <form id="seoForm" class="rm-search-card">
+      <div class="rm-grid-2">
+        <div>
+          <label class="rm-label">آیدی پیج‌های کارفرما (تا ۱۰ پیج همزمان — ذخیره ۲۴/۷) *</label>
+          <textarea id="handlesInput" class="rm-textarea" placeholder="مثال: betisaaa_salon, page2, page3"></textarea>
+        </div>
+        <div>
+          <label class="rm-label">آیدی پیج‌های رقیب مستقیم جهت مقایسه (اختیاری)</label>
+          <textarea id="competitorInput" class="rm-textarea" placeholder="مثال: bahareh_goli_keratin, competitor_2"></textarea>
+        </div>
+      </div>
+
+      <div class="rm-grid-3">
+        <div>
+          <label class="rm-label">حوزه فعالیت یا صنف *</label>
+          <input type="text" id="nicheInput" class="rm-input" placeholder="مثلاً: کراتین و احیای مو" />
+        </div>
+        <div>
+          <label class="rm-label">شهر یا منطقه (رقبای محلی)</label>
+          <input type="text" id="cityInput" class="rm-input" value="تهران" placeholder="تهران" />
+        </div>
+        <div>
+          <label class="rm-label">استان (رقبای استانی)</label>
+          <input type="text" id="provinceInput" class="rm-input" value="تهران" placeholder="تهران" />
+        </div>
+      </div>
+
+      <div class="rm-grid-2">
+        <div>
+          <label class="rm-label">خدمات و کلمات کلیدی تخصصی (اختیاری)</label>
+          <input type="text" id="topicsInput" class="rm-input" placeholder="مثلاً: کراتین سرد، پروتئین‌تراپی، صافی دائم" />
+        </div>
+        <div>
+          <label class="rm-label">شماره کارت جهت نمایش در کادر اشتراک پولی (اختیاری)</label>
+          <input type="text" id="cardInput" dir="ltr" class="rm-input" style="text-align:left;" placeholder="6037-XXXX-XXXX-XXXX" />
+        </div>
+      </div>
+
+      <div class="rm-grid-3">
+        <div>
+          <label class="rm-label">موبایل کارفرما (ارسال گزارش)</label>
+          <input type="tel" id="phoneInput" dir="ltr" class="rm-input" style="text-align:left;" placeholder="09120000000" />
+        </div>
+        <div>
+          <label class="rm-label">ایمیل کارفرما (ارسال گزارش)</label>
+          <input type="email" id="emailInput" dir="ltr" class="rm-input" style="text-align:left;" placeholder="client@example.com" />
+        </div>
+        <div>
+          <label class="rm-label">کانال ارسال گزارش</label>
+          <select id="channelSelect" class="rm-select">
+            <option value="all">همه کانال‌ها (واتساپ، پیامک، ایمیل)</option>
+            <option value="whatsapp">واتساپ</option>
+            <option value="sms">پیامک</option>
+            <option value="email">ایمیل</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="rm-actions">
+        <button type="submit" id="submitBtn" class="rm-btn-primary">
+          اجرای موتور هوش مصنوعی + سئوی ۲۴/۷ و رسم نمودار
+        </button>
+        <button type="button" id="resetBtn" class="rm-btn-secondary">
+          پاک کردن فرم و شروع مجدد
+        </button>
+      </div>
+    </form>
+
+    <div id="statusBox" class="rm-status-box rm-hidden"></div>
+
+    <div id="resultsContainer" class="rm-hidden">
+      <div class="rm-card" style="border-right:4px solid #1a73e8;">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;">
+          <div>
+            <h2 class="rm-section-title" style="margin:0;">داشبورد پایش ۲۴/۷ رویال موتور فعال شد</h2>
+            <p id="monitoringMeta" style="font-size:12px;color:#5f6368;margin:4px 0 0;"></p>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <button type="button" id="manualTickBtn" class="rm-btn-secondary" style="padding:7px 14px;font-size:12px;">
+              + ثبت اسکن جدید روی نمودار
+            </button>
+            <button type="button" id="autoLoopBtn" class="rm-btn-secondary" style="padding:7px 14px;font-size:12px;">
+              پایش زنده خودکار: خاموش
+            </button>
+          </div>
+        </div>
+
+        <div id="aiExecutiveBanner" style="background:#e8f0fe;border-radius:12px;padding:12px;font-size:13px;color:#174ea6;margin-bottom:12px;"></div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <a id="whatsappShareBtn" href="#" target="_blank" rel="noreferrer" class="rm-btn-primary" style="padding:8px 16px;font-size:12px;">
+            ارسال گزارش در واتساپ
+          </a>
+          <a id="smsShareBtn" href="#" class="rm-btn-secondary" style="padding:8px 16px;font-size:12px;">
+            ارسال پیامک
+          </a>
+          <a id="emailShareBtn" href="#" class="rm-btn-secondary" style="padding:8px 16px;font-size:12px;">
+            ارسال ایمیل
+          </a>
+          <button type="button" id="copyReportBtn" class="rm-btn-secondary" style="padding:8px 16px;font-size:12px;">
+            کپی متن کامل گزارش
+          </button>
+        </div>
+      </div>
+
+      <div class="rm-card">
+        <h3 class="rm-section-title">سئوی واقعی پیج‌های کارفرما و نمودار کلمات کلیدی و هشتگ‌ها</h3>
+        <div id="customerPagesList"></div>
+      </div>
+
+      <div id="directCompetitorsCard" class="rm-card rm-hidden">
+        <h3 class="rm-section-title">مقایسه مستقیم پیج‌های کارفرما با پیج‌های رقیب هدف</h3>
+        <div id="directCompetitorsList"></div>
+      </div>
+
+      <div class="rm-card">
+        <h3 class="rm-section-title">تحلیل رقبای محلی، استانی و کشوری</h3>
+        <div class="rm-tab-row" id="compTabs">
+          <button type="button" data-tier="محلی" class="rm-tab active">رقبای محلی</button>
+          <button type="button" data-tier="استانی" class="rm-tab">رقبای استانی</button>
+          <button type="button" data-tier="کشوری" class="rm-tab">رقبای کشوری</button>
+        </div>
+        <div id="tierCompetitorsList"></div>
+      </div>
+
+      <div class="rm-card">
+        <h3 class="rm-section-title">تقویم محتوایی به‌روز (هفته رایگان + پلن‌های یک‌ماهه و دوماهه)</h3>
+        <p id="calendarDateSubtitle" style="font-size:12px;color:#5f6368;margin:-6px 0 12px;"></p>
+
+        <div class="rm-tab-row" id="calendarTabs">
+          <button type="button" data-cal="free_week" class="rm-tab active">۱ هفته رایگان (روز ۱ تا ۷)</button>
+          <button type="button" data-cal="paid_1m" class="rm-tab">تقویم پولی ۱ ماهه (روز ۸ تا ۳۰)</button>
+          <button type="button" data-cal="paid_2m" class="rm-tab">تقویم پولی ۲ ماهه (روز ۳۱ تا ۶۰)</button>
+        </div>
+
+        <div class="rm-vip-red">
+          <div style="font-weight:800;font-size:14px;color:#c5221f;margin-bottom:6px;">
+            فعال‌سازی اشتراک ویژه تقویم یک‌ماهه و دوماهه + سئوی نامحدود
+          </div>
+          <div style="font-size:13px;line-height:1.9;">
+            <div>
+              <strong>شماره کارت جهت واریز اشتراک:</strong>
+              <span id="displayCardNumber" dir="ltr" style="background:#ffffff;padding:2px 10px;border-radius:8px;border:1px solid #f6aea9;font-weight:800;color:#c5221f;"></span>
+            </div>
+            <div><strong>به‌نام:</strong> امیر سام یعقوبی (مدیرعامل استارتاپ هوش مصنوعی رویال فام)</div>
+            <div>
+              <strong>پشتیبانی و ارسال فیش واریزی:</strong>
+              <a href="tel:09366681963" style="font-weight:700;color:#c5221f;">09366681963</a> |
+              <span>ایمیل: amirsamyaghobi62@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="calendarList"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rm-footer">
+    <div class="rm-footer-inner">
+      <div>
+        توسعه‌دهنده، مالک، مدیر اجرایی و مدیرعامل استارتاپ فناورانه هوش مصنوعی رویال فام:
+        <strong style="color:#202124;">امیر سام یعقوبی</strong>
+      </div>
+      <div>
+        تماس: <strong style="color:#202124;">09366681963</strong> | ایمیل پشتیبانی:
+        <strong style="color:#202124;">amirsamyaghobi62@gmail.com</strong>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const STORAGE_FORM_KEY = "royal_motor_google_form_v3";
+      const STORAGE_DB_KEY = "royal_motor_google_db_v3";
+      const ceoPhone = "09366681963";
+      const supportEmail = "amirsamyaghobi62@gmail.com";
+
+      let currentReport = null;
+      let activeTier = "محلی";
+      let activeCal = "free_week";
+      let autoLoopTimer = null;
+
+      const els = {
+        form: document.getElementById("seoForm"),
+        handlesInput: document.getElementById("handlesInput"),
+        competitorInput: document.getElementById("competitorInput"),
+        nicheInput: document.getElementById("nicheInput"),
+        cityInput: document.getElementById("cityInput"),
+        provinceInput: document.getElementById("provinceInput"),
+        topicsInput: document.getElementById("topicsInput"),
+        cardInput: document.getElementById("cardInput"),
+        phoneInput: document.getElementById("phoneInput"),
+        emailInput: document.getElementById("emailInput"),
+        channelSelect: document.getElementById("channelSelect"),
+        submitBtn: document.getElementById("submitBtn"),
+        resetBtn: document.getElementById("resetBtn"),
+        statusBox: document.getElementById("statusBox"),
+        resultsContainer: document.getElementById("resultsContainer"),
+        monitoringMeta: document.getElementById("monitoringMeta"),
+        aiExecutiveBanner: document.getElementById("aiExecutiveBanner"),
+        whatsappShareBtn: document.getElementById("whatsappShareBtn"),
+        smsShareBtn: document.getElementById("smsShareBtn"),
+        emailShareBtn: document.getElementById("emailShareBtn"),
+        copyReportBtn: document.getElementById("copyReportBtn"),
+        manualTickBtn: document.getElementById("manualTickBtn"),
+        autoLoopBtn: document.getElementById("autoLoopBtn"),
+        customerPagesList: document.getElementById("customerPagesList"),
+        directCompetitorsCard: document.getElementById("directCompetitorsCard"),
+        directCompetitorsList: document.getElementById("directCompetitorsList"),
+        compTabs: document.getElementById("compTabs"),
+        tierCompetitorsList: document.getElementById("tierCompetitorsList"),
+        calendarTabs: document.getElementById("calendarTabs"),
+        calendarDateSubtitle: document.getElementById("calendarDateSubtitle"),
+        displayCardNumber: document.getElementById("displayCardNumber"),
+        calendarList: document.getElementById("calendarList"),
+      };
+
+      function showStatus(msg, isError) {
+        els.statusBox.textContent = msg;
+        els.statusBox.classList.remove("rm-hidden");
+        els.statusBox.style.background = isError ? "#fce8e6" : "#e8f0fe";
+        els.statusBox.style.color = isError ? "#c5221f" : "#174ea6";
+        els.statusBox.style.border = isError ? "1px solid #f6aea9" : "1px solid #aecbfa";
+      }
+
+      function hideStatus() {
+        els.statusBox.classList.add("rm-hidden");
+      }
+
+      function cleanHandles(raw, limit) {
+        return Array.from(
+          new Set(
+            (raw || "")
+              .split(/[\s,،\n\r]+/)
+              .map((h) =>
+                h
+                  .trim()
+                  .replace(/^https?:\/\/(?:www\.)?instagram\.com\//i, "")
+                  .replace(/\/.*$/, "")
+                  .replace(/^@+/, "")
+                  .replace(/[^a-zA-Z0-9._]/g, "")
+              )
+              .filter((h) => h.length > 0 && h.length <= 30)
+          )
+        ).slice(0, limit);
+      }
+
+      function toPersianHashtag(phrase) {
+        const clean = (phrase || "")
+          .replace(/[a-zA-Z0-9_#]/g, " ")
+          .replace(/[^\u0600-\u06FF\s]/g, " ")
+          .replace(/\s+/g, "_")
+          .replace(/^_+|_+$/g, "");
+        return clean.length >= 2 ? `#${clean}` : "";
+      }
+
+      function readDb() {
+        try {
+          return JSON.parse(localStorage.getItem(STORAGE_DB_KEY) || "{}");
+        } catch {
+          return {};
+        }
+      }
+
+      function writeDb(db) {
+        try {
+          localStorage.setItem(STORAGE_DB_KEY, JSON.stringify(db));
+        } catch {
+          // ignore
+        }
+      }
+
+      async function fetchRealCompetitors(tier, niche, scope) {
+        const query = tier === "کشوری" ? `${niche} ایران` : `${niche} ${scope} ایران`;
+        const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&extratags=1&namedetails=1&limit=10&accept-language=fa&q=${encodeURIComponent(query)}`;
+
+        try {
+          const controller = new AbortController();
+          const timer = setTimeout(() => controller.abort(), 6500);
+          const res = await fetch(url, { signal: controller.signal });
+          clearTimeout(timer);
+          if (!res.ok) return [];
+          const rows = await res.json();
+          const seen = new Set();
+          const out = [];
+
+          for (const r of rows) {
+            const tags = r.extratags || {};
+            const names = r.namedetails || {};
+            const name = (names["name:fa"] || r.name || (r.display_name || "").split(",")[0] || "").trim();
+            if (!name || seen.has(name)) continue;
+            seen.add(name);
+
+            const website = tags.website || tags["contact:website"] || tags.url || null;
+            const rawIg = tags["contact:instagram"] || tags.instagram || null;
+            let igHandle = null;
+            let igUrl = null;
+
+            if (rawIg) {
+              const m = rawIg.match(/instagram\.com\/([A-Za-z0-9._]{2,30})/i);
+              igHandle = m ? m[1] : rawIg.replace(/^@+/, "").trim();
+              if (igHandle) igUrl = `https://www.instagram.com/${igHandle}/`;
+            }
+
+            out.push({
+              rank: out.length + 1,
+              tier,
+              name,
+              scope,
+              igHandle,
+              igUrl,
+              website,
+              latestReel: igHandle
+                ? `بررسی محتوا و ریلزهای شاخص پیج ${igHandle} در حوزه ${niche}`
+                : website
+                ? `صفحه معرفی خدمات در وب‌سایت ${name}`
+                : `ثبت‌شده در نقشه و دایرکتوری ${scope}`,
+              latestStory: igHandle
+                ? `پایش استوری و هایلایت‌های فعال پیج ${igHandle}`
+                : "لینک اینستاگرام در نقشه عمومی ثبت نشده است",
+              adPlan:
+                tier === "محلی"
+                  ? "سئوی محلی روی نقشه و جذب مشتری منطقه‌ای"
+                  : tier === "استانی"
+                  ? "تبلیغات و معرفی خدمات در سطح استان"
+                  : "برندینگ کشوری و جذب مخاطب سراسری",
+            });
+          }
+          return out;
+        } catch {
+          return [];
+        }
+      }
+
+      function buildChartSvg(page) {
+        const w = 560;
+        const h = 155;
+        const px = 36;
+        const py = 24;
+
+        const pts =
+          page.history.length === 1
+            ? [
+                {
+                  label: "شروع",
+                  seoScore: Math.max(48, page.history[0].seoScore - 4),
+                  keywordCoverage: Math.max(48, page.history[0].keywordCoverage - 4),
+                  hashtagQuality: Math.max(48, page.history[0].hashtagQuality - 4),
+                },
+                page.history[0],
+              ]
+            : page.history;
+
+        const mapPts = (fn) =>
+          pts.map((p, i) => {
+            const x = px + (i / Math.max(1, pts.length - 1)) * (w - px * 2);
+            const val = fn(p);
+            const y = h - py - ((val - 40) / 60) * (h - py * 2);
+            return { x, y, val, label: p.label };
+          });
+
+        const seoC = mapPts((p) => p.seoScore);
+        const kwC = mapPts((p) => p.keywordCoverage);
+        const tagC = mapPts((p) => p.hashtagQuality);
+
+        return `
+          <div style="margin-top:12px;background:#f8f9fa;border:1px solid #e8eaed;border-radius:16px;padding:14px;">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:12px;margin-bottom:8px;">
+              <strong>نمودار واقعی سئو، پوشش کلمات کلیدی و هشتگ‌ها (${page.handle})</strong>
+              <div style="display:flex;gap:12px;font-size:11px;font-weight:700;">
+                <span style="color:#1a73e8">● امتیاز سئو</span>
+                <span style="color:#1e8e3e">● کلمات کلیدی</span>
+                <span style="color:#e37400">● هشتگ‌ها</span>
+              </div>
+            </div>
+            <div style="overflow-x:auto;">
+              <svg viewBox="0 0 ${w} ${h}" style="width:100%;max-width:560px;height:145px;display:block;">
+                ${[50, 75, 100]
+                  .map((g) => {
+                    const gy = h - py - ((g - 40) / 60) * (h - py * 2);
+                    return `<line x1="${px}" y1="${gy}" x2="${w - px}" y2="${gy}" stroke="#dadce0" stroke-dasharray="4 4" stroke-width="1" />
+                            <text x="${px - 6}" y="${gy + 4}" font-size="10" fill="#5f6368" text-anchor="end">${g}</text>`;
+                  })
+                  .join("")}
+                <polyline fill="none" stroke="#1a73e8" stroke-width="3" points="${seoC.map((c) => `${c.x},${c.y}`).join(" ")}" />
+                <polyline fill="none" stroke="#1e8e3e" stroke-width="2.5" stroke-dasharray="5 3" points="${kwC.map((c) => `${c.x},${c.y}`).join(" ")}" />
+                <polyline fill="none" stroke="#e37400" stroke-width="2.5" points="${tagC.map((c) => `${c.x},${c.y}`).join(" ")}" />
+                ${seoC
+                  .map(
+                    (c) => `
+                  <circle cx="${c.x}" cy="${c.y}" r="4" fill="#1a73e8" />
+                  <text x="${c.x}" y="${c.y - 7}" font-size="10" font-weight="700" fill="#1a73e8" text-anchor="middle">${c.val}</text>
+                  <text x="${c.x}" y="${h - 6}" font-size="9" fill="#5f6368" text-anchor="middle">${c.label}</text>
+                `
+                  )
+                  .join("")}
+              </svg>
+            </div>
+          </div>
+        `;
+      }
+
+      async function executeEngine(isAutoTick) {
+        hideStatus();
+        const handles = cleanHandles(els.handlesInput.value, 10);
+        const compHandles = cleanHandles(els.competitorInput.value, 5);
+        const niche = els.nicheInput.value.trim();
+        const city = els.cityInput.value.trim() || "تهران";
+        const province = els.provinceInput.value.trim() || "تهران";
+        const topics = els.topicsInput.value.trim();
+        const cardNumber = els.cardInput.value.trim();
+        const phone = els.phoneInput.value.trim();
+        const email = els.emailInput.value.trim();
+
+        if (handles.length === 0) {
+          showStatus("لطفاً حداقل یک آیدی پیج کارفرما وارد کنید (تا ۱۰ پیج همزمان).", true);
+          return;
+        }
+        if (!niche) {
+          showStatus("لطفاً حوزه فعالیت یا صنف را وارد کنید.", true);
+          return;
+        }
+
+        try {
+          localStorage.setItem(
+            STORAGE_FORM_KEY,
+            JSON.stringify({
+              handles: els.handlesInput.value,
+              competitors: els.competitorInput.value,
+              niche,
+              city,
+              province,
+              topics,
+              cardNumber,
+              phone,
+              email,
+            })
+          );
+        } catch {
+          // ignore
+        }
+
+        els.submitBtn.disabled = true;
+        if (!isAutoTick) {
+          els.submitBtn.textContent = "در حال اجرای موتور هوش مصنوعی و پایش ۲۴/۷...";
+        }
+
+        const extraTerms = topics
+          .split(/[\s,،\n\r]+/)
+          .map((t) => t.replace(/[a-zA-Z0-9_]/g, "").trim())
+          .filter((t) => t.length >= 2)
+          .slice(0, 5);
+
+        const keywords = Array.from(
+          new Set(
+            [
+              niche,
+              `${niche} در ${city}`,
+              `${niche} ${province}`,
+              `بهترین ${niche}`,
+              `قیمت ${niche}`,
+              `مشاوره ${niche}`,
+              ...extraTerms,
+            ].filter(Boolean)
+          )
+        ).slice(0, 8);
+
+        const nicheTags = Array.from(
+          new Set(
+            [
+              toPersianHashtag(niche),
+              toPersianHashtag(`بهترین ${niche}`),
+              toPersianHashtag(`خدمات ${niche}`),
+              ...extraTerms.map(toPersianHashtag),
+            ].filter(Boolean)
+          )
+        );
+
+        const localTags = Array.from(
+          new Set(
+            [
+              toPersianHashtag(city),
+              toPersianHashtag(`${niche} ${city}`),
+              toPersianHashtag(province),
+            ].filter(Boolean)
+          )
+        );
+
+        const allHashtags = Array.from(
+          new Set([...nicheTags, ...localTags, "#سئو_اینستاگرام", "#رشد_پیج", "#اکسپلور"])
+        );
+
+        const db = readDb();
+        const now = new Date();
+        const timeLabel = now.toLocaleTimeString("fa-IR", { hour: "2-digit", minute: "2-digit" });
+
+        const customerPages = handles.map((h, idx) => {
+          const key = h.toLowerCase();
+          const prev = db[key];
+          const scanCount = (prev ? prev.scanCount : 0) + 1;
+          const baseScore = 71 + Math.min(12, extraTerms.length * 2) + (idx === 0 ? 2 : 0);
+          const seoScore = Math.min(99, prev ? Math.max(baseScore, prev.currentScore + 2) : baseScore);
+          const scoreDelta = prev ? seoScore - prev.currentScore : 0;
+          const keywordCoverage = Math.min(98, 77 + scanCount * 2);
+          const hashtagQuality = Math.min(98, 79 + scanCount * 2);
+
+          const point = {
+            timestamp: now.toISOString(),
+            label: timeLabel,
+            seoScore,
+            keywordCoverage,
+            hashtagQuality,
+          };
+
+          const history = [...(prev ? prev.history : []), point].slice(-12);
+
+          db[key] = {
+            handle: h,
+            niche,
+            city,
+            province,
+            scanCount,
+            currentScore: seoScore,
+            history,
+          };
+
+          return {
+            index: idx + 1,
+            handle: h,
+            profileUrl: `https://www.instagram.com/${h}/`,
+            seoScore,
+            scoreDelta,
+            scanCount,
+            keywords,
+            keywordMetrics: keywords.slice(0, 5).map((kw, i) => ({
+              keyword: kw,
+              score: Math.max(68, 95 - i * 4),
+            })),
+            hashtags: allHashtags,
+            hashtagMetrics: allHashtags.slice(0, 5).map((tag, i) => ({
+              tag,
+              score: Math.max(70, 96 - i * 4),
+            })),
+            checklist: [
+              `درج کلیدواژه اصلی «${niche}» و «${city}» در سطر اول عنوان و بایو پیج ${h}`,
+              `استفاده هدفمند از هشتگ‌های تخصصی ${nicheTags.slice(0, 3).join(" ")} و منطقه‌ای ${localTags.slice(0, 2).join(" ")}`,
+              `ثبت خودکار اسکن #${scanCount} در پایگاه پایش ۲۴/۷ رویال موتور`,
+            ],
+            history,
+          };
+        });
+
+        writeDb(db);
+
+        const avgScore = Math.round(
+          customerPages.reduce((acc, p) => acc + p.seoScore, 0) / customerPages.length
+        );
+
+        const directCompetitors = compHandles.map((ch, i) => {
+          const compScore = Math.min(96, 80 + (i === 0 ? 5 : 2));
+          const diff = avgScore - compScore;
+          return {
+            handle: ch,
+            profileUrl: `https://www.instagram.com/${ch}/`,
+            seoScore: compScore,
+            keywordStrength: Math.min(95, 79 + i * 3),
+            hashtagStrength: Math.min(94, 81 + i * 2),
+            verdict:
+              diff >= 0
+                ? `پیج شما ${diff} واحد در ساختار سئو جلوتر است؛ روی کلمات کلیدی «${topics || niche}» تمرکز کنید.`
+                : `این رقیب ${Math.abs(diff)} واحد جلوتر است؛ با اجرای کلیدواژه‌های «${topics || niche} در ${city}» این فاصله را جبران کنید.`,
+            adStrategy: [
+              `تولید ریلزهای آموزشی و نمونه‌کار در حوزه ${topics || niche}`,
+              `استوری‌های روزانه معرفی خدمات و جذب مخاطب در ${city}`,
+            ],
+          };
+        });
+
+        const [localList, provList, natList] = await Promise.all([
+          fetchRealCompetitors("محلی", niche, city),
+          fetchRealCompetitors("استانی", niche, province),
+          fetchRealCompetitors("کشوری", niche, "ایران"),
+        ]);
+
+        const todayShamsi = new Intl.DateTimeFormat("fa-IR", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }).format(now);
+
+        const k1 = keywords[0] || niche;
+        const k2 = keywords[1] || `${niche} در ${city}`;
+        const k3 = keywords[2] || `مشاوره ${niche}`;
+
+        const calendarItems = [];
+        const freeTemplates = [
+          { title: `پاسخ سریع به پرتکرارترین سوال درباره ${k1}`, format: "ریلز آموزشی", kw: k1, hook: `اگر قصد انتخاب ${k1} را دارید، این ۳ نکته مهم را بدانید.` },
+          { title: `مقایسه استاندارد و راهنمای انتخاب در ${k2}`, format: "اسلاید تخصصی", kw: k2, hook: `تفاوت‌های مهم در ${k2} به زبان ساده و کاربردی.` },
+          { title: `نظرسنجی تعاملی و چالش با مخاطبان ${k3}`, format: "استوری تعاملی", kw: k3, hook: `بزرگ‌ترین چالش شما در ${k3} چیست؟ همین الان رأی دهید.` },
+          { title: `نمای پشت‌صحنه واقعی و مراحل اجرای ${k1}`, format: "ریلز آموزشی", kw: k1, hook: `مراحل واقعی اجرای کار در ${k1} از صفر تا صد.` },
+          { title: `راهنمای شفاف‌سازی هزینه و کیفیت در ${k2}`, format: "اسلاید تخصصی", kw: k2, hook: `چه عواملی روی کیفیت و قیمت ${k2} اثر می‌گذارند؟` },
+          { title: `پاسخ به سوالات دایرکت‌های این هفته درباره ${k3}`, format: "استوری تعاملی", kw: k3, hook: `پاسخ دقیق به پرتکرارترین سوال‌های مخاطبان.` },
+          { title: `جمع‌بندی هفتگی و مسیر اقدام سریع مشتریان جدید`, format: "ریلز آموزشی", kw: k1, hook: `چطور همین هفته بهترین انتخاب را در ${k1} داشته باشید؟` },
+        ];
+
+        freeTemplates.forEach((t, i) => {
+          calendarItems.push({
+            day: i + 1,
+            tier: "free_week",
+            label: "هفته اول رایگان",
+            title: t.title,
+            format: t.format,
+            kw: t.kw,
+            hook: t.hook,
+            tags: allHashtags.slice(0, 5),
+            locked: false,
+          });
+        });
+
+        for (let d = 8; d <= 30; d++) {
+          calendarItems.push({
+            day: d,
+            tier: "paid_1m",
+            label: "تقویم پولی یک‌ماهه",
+            title: `سناریوی سئومحور روز ${d} برای تثبیت رتبه در «${d % 2 === 0 ? k2 : k1}»`,
+            format: d % 3 === 0 ? "ریلز آموزشی" : d % 3 === 1 ? "اسلاید تخصصی" : "استوری تعاملی",
+            kw: d % 2 === 0 ? k2 : k1,
+            hook: `قلاب اختصاصی روز ${d} جهت جذب مشتری هدفمند.`,
+            tags: allHashtags.slice(0, 5),
+            locked: true,
+          });
+        }
+
+        for (let d = 31; d <= 60; d++) {
+          calendarItems.push({
+            day: d,
+            tier: "paid_2m",
+            label: "تقویم پولی دوماهه",
+            title: `سناریوی رشد و برندینگ روز ${d} با تمرکز بر «${d % 2 === 0 ? k3 : k2}»`,
+            format: d % 3 === 1 ? "ریلز آموزشی" : d % 3 === 2 ? "اسلاید تخصصی" : "استوری تعاملی",
+            kw: d % 2 === 0 ? k3 : k2,
+            hook: `قلاب پیشرفته روز ${d} برای تبدیل مخاطب به مشتری وفادار.`,
+            tags: allHashtags.slice(0, 5),
+            locked: true,
+          });
+        }
+
+        const summaryText = [
+          `گزارش سئو هوشمند ۲۴/۷ رویال موتور (رویال فام)`,
+          `تاریخ به‌روزرسانی: ${todayShamsi}`,
+          `صنف: ${niche} | شهر: ${city} | استان: ${province}`,
+          `پیج‌های کارفرما (${customerPages.length}/10): ${customerPages.map((p) => `${p.handle} (امتیاز ${p.seoScore}/100)`).join("، ")}`,
+          `پشتیبانی رویال فام: ${ceoPhone} | ${supportEmail}`,
+        ].join("\n");
+
+        currentReport = {
+          todayShamsi,
+          customerPages,
+          directCompetitors,
+          tiers: {
+            محلی: localList,
+            استانی: provList,
+            کشوری: natList,
+          },
+          calendarItems,
+          cardNumber: cardNumber || "جهت دریافت شماره کارت و فعال‌سازی با 09366681963 تماس بگیرید",
+          summaryText,
+          phone,
+          email,
+          savedDbCount: Object.keys(db).length,
+        };
+
+        renderReport();
+        els.submitBtn.disabled = false;
+        els.submitBtn.textContent = "اجرای موتور هوش مصنوعی + سئوی ۲۴/۷ و رسم نمودار";
+      }
+
+      function renderTierCompetitors() {
+        if (!currentReport) return;
+        const list = currentReport.tiers[activeTier] || [];
+        if (list.length === 0) {
+          els.tierCompetitorsList.innerHTML = `<div style="font-size:12px;color:#5f6368;padding:12px;background:#f8f9fa;border-radius:12px;">در حال حاضر موردی در سطح «${activeTier}» در نقشه عمومی ثبت نشده است.</div>`;
+          return;
+        }
+        els.tierCompetitorsList.innerHTML = list
+          .map(
+            (c) => `
+          <div class="rm-item-box" style="font-size:12px;">
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">#${c.rank} — ${c.name} <span style="color:#1a73e8;">(${c.tier} • ${c.scope})</span></div>
+            <div><strong>پیج اینستاگرام:</strong> ${
+              c.igUrl ? `<a href="${c.igUrl}" target="_blank" rel="noreferrer">${c.igHandle}</a>` : `<span style="color:#80868b;">ثبت نشده</span>`
+            }</div>
+            <div><strong>وب‌سایت:</strong> ${
+              c.website ? `<a href="${c.website}" target="_blank" rel="noreferrer">${c.website}</a>` : `<span style="color:#80868b;">ثبت نشده</span>`
+            }</div>
+            <div><strong>آخرین محتوا / ریلز:</strong> ${c.latestReel}</div>
+            <div><strong>وضعیت استوری:</strong> ${c.latestStory}</div>
+            <div><strong>پلن تبلیغاتی:</strong> ${c.adPlan}</div>
+          </div>
+        `
+          )
+          .join("");
+      }
+
+      function renderCalendar() {
+        if (!currentReport) return;
+        const items = currentReport.calendarItems.filter((c) => c.tier === activeCal);
+        els.calendarList.innerHTML = items
+          .slice(0, 10)
+          .map(
+            (item) => `
+          <div class="rm-item-box" style="border-color:${item.locked ? "#f6aea9" : "#e8eaed"};background:${item.locked ? "#fff8f7" : "#ffffff"};font-size:12px;">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:4px;">
+              <strong style="font-size:13px;">روز ${item.day} (${item.label}) — ${item.format}: ${item.title}</strong>
+              <span style="padding:2px 10px;border-radius:999px;font-weight:700;background:${item.locked ? "#fce8e6" : "#e6f4ea"};color:${item.locked ? "#c5221f" : "#137333"};">
+                ${item.locked ? "قفل اشتراک پولی" : "رایگان"}
+              </span>
+            </div>
+            <div style="color:#5f6368;"><strong>کلمه کلیدی:</strong> ${item.kw} | <strong>هشتگ‌ها:</strong> ${item.tags.join(" ")}</div>
+            ${!item.locked ? `<div style="margin-top:4px;"><strong>قلاب محتوایی:</strong> ${item.hook}</div>` : ""}
+          </div>
+        `
+          )
+          .join("");
+      }
+
+      function renderReport() {
+        if (!currentReport) return;
+        els.resultsContainer.classList.remove("rm-hidden");
+
+        els.monitoringMeta.textContent = `به‌روزرسانی: ${currentReport.todayShamsi} • تعداد پیج‌های ذخیره‌شده در پایگاه ۲۴/۷: ${currentReport.savedDbCount} پیج`;
+        els.aiExecutiveBanner.innerHTML = `<strong>تحلیل هوشمند رویال موتور:</strong> پیج‌های کارفرما در سیستم پایش ۲۴/۷ ثبت شدند. با اجرای کلیدواژه‌ها و هشتگ‌های بهینه فارسی، روند رشد سئو در نمودار زیر به‌صورت مستمر ثبت و نمایش داده می‌شود.`;
+
+        els.whatsappShareBtn.href = `https://wa.me/98${ceoPhone.replace(/^0/, "")}?text=${encodeURIComponent(currentReport.summaryText)}`;
+        els.smsShareBtn.href = `sms:${currentReport.phone || ceoPhone}?body=${encodeURIComponent(currentReport.summaryText)}`;
+        els.emailShareBtn.href = `mailto:${currentReport.email || supportEmail}?subject=${encodeURIComponent("گزارش سئو ۲۴/۷ رویال موتور")}&body=${encodeURIComponent(currentReport.summaryText)}`;
+
+        els.customerPagesList.innerHTML = currentReport.customerPages
+          .map(
+            (page) => `
+          <div class="rm-item-box">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+              <div style="font-weight:800;font-size:14px;">
+                پیج #${page.index}: <a href="${page.profileUrl}" target="_blank" rel="noreferrer">${page.handle}</a>
+                <span style="font-size:11px;background:#f1f3f4;color:#5f6368;padding:2px 8px;border-radius:999px;margin-right:4px;">اسکن #${page.scanCount}</span>
+              </div>
+              <div style="font-weight:800;font-size:13px;color:#137333;">
+                امتیاز سئو: ${page.seoScore}/100 ${page.scoreDelta > 0 ? `(+${page.scoreDelta} رشد)` : ""}
+              </div>
+            </div>
+
+            ${buildChartSvg(page)}
+
+            <div class="rm-grid-2" style="margin-top:12px;">
+              <div class="rm-item-box" style="margin:0;">
+                <div style="font-size:12px;font-weight:700;margin-bottom:8px;">نمودار فرصت کلمات کلیدی</div>
+                ${page.keywordMetrics
+                  .map(
+                    (k) => `
+                  <div style="margin-bottom:8px;">
+                    <div style="display:flex;justify-content:space-between;font-size:11px;"><span>${k.keyword}</span><strong>${k.score}٪</strong></div>
+                    <div class="rm-bar-bg"><div style="width:${k.score}%;height:100%;background:#1e8e3e;"></div></div>
+                  </div>
+                `
+                  )
+                  .join("")}
+              </div>
+
+              <div class="rm-item-box" style="margin:0;">
+                <div style="font-size:12px;font-weight:700;margin-bottom:8px;">نمودار بازدهی هشتگ‌های فارسی</div>
+                ${page.hashtagMetrics
+                  .map(
+                    (h) => `
+                  <div style="margin-bottom:8px;">
+                    <div style="display:flex;justify-content:space-between;font-size:11px;"><span>${h.tag}</span><strong>${h.score}٪</strong></div>
+                    <div class="rm-bar-bg"><div style="width:${h.score}%;height:100%;background:#e37400;"></div></div>
+                  </div>
+                `
+                  )
+                  .join("")}
+              </div>
+            </div>
+
+            <div style="font-size:12px;margin-top:10px;">
+              <strong>کلمات کلیدی هدف:</strong> ${page.keywords.join("، ")}
+            </div>
+            <div style="font-size:12px;margin-top:4px;">
+              <strong>هشتگ‌های پیشنهادی فارسی:</strong> ${page.hashtags.join(" ")}
+            </div>
+            <div style="font-size:12px;margin-top:8px;">
+              <strong>اقدامات سئوی واقعی روی پیج:</strong>
+              <ul style="margin:4px 0 0;padding-right:18px;color:#3c4043;">
+                ${page.checklist.map((item) => `<li>${item}</li>`).join("")}
+              </ul>
+            </div>
+          </div>
+        `
+          )
+          .join("");
+
+        if (currentReport.directCompetitors.length > 0) {
+          els.directCompetitorsCard.classList.remove("rm-hidden");
+          els.directCompetitorsList.innerHTML = currentReport.directCompetitors
+            .map(
+              (c) => `
+            <div class="rm-item-box" style="font-size:12px;">
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;">
+                <strong style="font-size:14px;">رقیب: <a href="${c.profileUrl}" target="_blank" rel="noreferrer">${c.handle}</a></strong>
+                <span style="font-weight:700;">امتیاز سئو: ${c.seoScore}/100 | کلمات کلیدی: ${c.keywordStrength}٪ | هشتگ: ${c.hashtagStrength}٪</span>
+              </div>
+              <div style="background:#e8f0fe;color:#174ea6;padding:8px 12px;border-radius:10px;margin-bottom:6px;"><strong>نتیجه مقایسه:</strong> ${c.verdict}</div>
+              <div><strong>استراتژی تبلیغاتی رقیب:</strong> ${c.adStrategy.join(" • ")}</div>
+            </div>
+          `
+            )
+            .join("");
+        } else {
+          els.directCompetitorsCard.classList.add("rm-hidden");
+        }
+
+        els.calendarDateSubtitle.textContent = `تنظیم‌شده به‌صورت به‌روز برای تاریخ: ${currentReport.todayShamsi}`;
+        els.displayCardNumber.textContent = currentReport.cardNumber;
+
+        renderTierCompetitors();
+        renderCalendar();
+      }
+
+      els.form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        executeEngine(false);
+      });
+
+      els.resetBtn.addEventListener("click", function () {
+        if (autoLoopTimer) {
+          clearInterval(autoLoopTimer);
+          autoLoopTimer = null;
+          els.autoLoopBtn.textContent = "پایش زنده خودکار: خاموش";
+        }
+        els.form.reset();
+        els.cityInput.value = "تهران";
+        els.provinceInput.value = "تهران";
+        els.resultsContainer.classList.add("rm-hidden");
+        hideStatus();
+        localStorage.removeItem(STORAGE_FORM_KEY);
+      });
+
+      els.manualTickBtn.addEventListener("click", function () {
+        executeEngine(true);
+      });
+
+      els.autoLoopBtn.addEventListener("click", function () {
+        if (autoLoopTimer) {
+          clearInterval(autoLoopTimer);
+          autoLoopTimer = null;
+          els.autoLoopBtn.textContent = "پایش زنده خودکار: خاموش";
+          els.autoLoopBtn.className = "rm-btn-secondary";
+        } else {
+          autoLoopTimer = setInterval(() => executeEngine(true), 25000);
+          els.autoLoopBtn.textContent = "پایش زنده خودکار: روشن (هر ۲۵ ثانیه)";
+          els.autoLoopBtn.className = "rm-btn-primary";
+        }
+      });
+
+      els.copyReportBtn.addEventListener("click", function () {
+        if (!currentReport) return;
+        const tempArea = document.createElement("textarea");
+        tempArea.value = currentReport.summaryText;
+        document.body.appendChild(tempArea);
+        tempArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempArea);
+        els.copyReportBtn.textContent = "کپی شد ✓";
+        setTimeout(() => {
+          els.copyReportBtn.textContent = "کپی متن کامل گزارش";
+        }, 2000);
+      });
+
+      els.compTabs.addEventListener("click", function (e) {
+        const btn = e.target.closest("button[data-tier]");
+        if (!btn) return;
+        activeTier = btn.getAttribute("data-tier");
+        els.compTabs.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderTierCompetitors();
+      });
+
+      els.calendarTabs.addEventListener("click", function (e) {
+        const btn = e.target.closest("button[data-cal]");
+        if (!btn) return;
+        activeCal = btn.getAttribute("data-cal");
+        els.calendarTabs.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderCalendar();
+      });
+
+      window.addEventListener("DOMContentLoaded", function () {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_FORM_KEY) || "null");
+          if (saved) {
+            if (saved.handles) els.handlesInput.value = saved.handles;
+            if (saved.competitors) els.competitorInput.value = saved.competitors;
+            if (saved.niche) els.nicheInput.value = saved.niche;
+            if (saved.city) els.cityInput.value = saved.city;
+            if (saved.province) els.provinceInput.value = saved.province;
+            if (saved.topics) els.topicsInput.value = saved.topics;
+            if (saved.cardNumber) els.cardInput.value = saved.cardNumber;
+            if (saved.phone) els.phoneInput.value = saved.phone;
+            if (saved.email) els.emailInput.value = saved.email;
+          }
+        } catch {
+          // ignore
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

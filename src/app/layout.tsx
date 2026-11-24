@@ -1,11 +1,10 @@
-import type { Metadata } from 'next';
-import React from 'react';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'رویال موتور | اولین موتور هوش مصنوعی سئو اتوماتیک اینستاگرام در ایران',
+  title: "رویال موتور | اولین موتور هوش مصنوعی سئو اتوماتیک اینستاگرام در ایران",
   description:
-    'استارتاپ فناورانه هوش مصنوعی رویال فام - تحلیل همزمان تا ۱۰ پیج، شناسایی ۲۰ رقیب محلی، استانی و کشوری، هشتگ‌های سئو ۲۴/۷ و تقویم محتوایی ۷ روز رایگان.',
+    "استارتاپ فناورانه هوش مصنوعی رویال فام | اولین استارتاپ وایپ کدینگ در ایران — موتور خزش و سئو اتوماتیک اینستاگرام",
 };
 
 export default function RootLayout({
@@ -15,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="bg-white text-[#202124] antialiased">{children}</body>
+      <body className="min-h-screen bg-white text-gray-900 antialiased selection:bg-blue-100 selection:text-blue-900">
+        {children}
+      </body>
     </html>
   );
 }
